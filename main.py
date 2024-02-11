@@ -2,6 +2,9 @@ import tkinter
 from tkinter import *
 from tkinter import ttk
 
+# import pillow
+from PIL import Image
+
 # cores --------------------------------
 co0 = "#FFFFFF"  # white / branca
 co1 = "#333333"  # black / preta
@@ -11,10 +14,13 @@ co4 = "#34eb3d"   # green / verde
 co5 = "#e85151"   # red / vermelha
 bottom = "#3b3b3b"
 
+# Config Windows
 janela = Tk()
 janela.title("")
 janela.geometry('260x280')
 janela.configure(bg=bottom)
+
+# Split windows
 
 top_frame = Frame(janela, width=260, height=100, bg=co1, relief='raised')
 top_frame.grid(row=0, column=0, sticky=NW)
@@ -56,5 +62,6 @@ app_ine = Label(top_frame, text="", width=255, anchor='center',
                 font=('Ivy 1 bold'), bg=co4, fg=co0)
 app_ine.place(x=0, y=95)
 
+# Bottom Frame
 
 janela.mainloop()
