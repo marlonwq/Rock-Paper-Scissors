@@ -1,6 +1,7 @@
 from tkinter import Tk, Frame, Label, Button, NW
 from PIL import Image, ImageTk
 
+
 class Screen:
     def __init__(self):
         # Constants
@@ -20,7 +21,8 @@ class Screen:
         self.janela.configure(bg=self.BOTTOM)
 
         # Top Frame
-        self.top_frame = Frame(self.janela, width=260, height=100, bg=self.BLACK, relief='raised')
+        self.top_frame = Frame(self.janela, width=260,
+                               height=100, bg=self.BLACK, relief='raised')
         self.top_frame.grid(row=0, column=0, sticky=NW)
 
         # Labels and Points for User
@@ -50,19 +52,37 @@ class Screen:
         self.machine_label.place(x=173, y=70)
 
         # Lower Frame
-        self.lower_frame = Frame(self.janela, width=260, height=300, bg=self.WHITE, relief='flat')
+        self.lower_frame = Frame(
+            self.janela, width=260, height=300, bg=self.WHITE, relief='flat')
         self.lower_frame.grid(row=1, column=0, sticky=NW)
 
         # Rock Button
         self.rock_icon = Image.open('image/HandRock.png')
-        self.rock_icon = self.rock_icon.resize((100, 100), Image.NEAREST)
+        self.rock_icon = self.rock_icon.resize((50, 50), Image.NEAREST)
         self.rock_img = ImageTk.PhotoImage(self.rock_icon)
-        self.rock_button = Button(self.lower_frame, width=100, height=100, image=self.rock_img, compound='center',
+        self.rock_button = Button(self.lower_frame, width=50, height=10, image=self.rock_img, compound='center',
                                   bg=self.WHITE, fg=self.WHITE, font=(self.FONT_NAME, self.FONT_SIZE_SMALL, 'bold'), anchor='center', relief='flat')
         self.rock_button.grid(row=0, column=0)
+        # Rock Button
+        self.rock_icon = Image.open('image/HandPaper.png')
+        self.rock_icon = self.rock_icon.resize((50, 50), Image.NEAREST)
+        self.rock_img = ImageTk.PhotoImage(self.rock_icon)
+        self.rock_button = Button(self.lower_frame, width=10, height=50, image=self.rock_img, compound='center',
+                                    bg=self.WHITE, fg=self.WHITE, font=(self.FONT_NAME, self.FONT_SIZE_SMALL, 'bold'), anchor='center', relief='flat')
+        self.rock_button.grid(row=0, column=0)
+
+
+
+
+
+
+
+
+
 
     def start(self):
         self.janela.mainloop()
+
 
 class Game:
     def __init__(self):
@@ -70,6 +90,7 @@ class Game:
 
     def start(self):
         self.screen.start()
+
 
 game = Game()
 game.start()
