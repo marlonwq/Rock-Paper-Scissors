@@ -62,23 +62,8 @@ class Screen:
         self.rock_img = ImageTk.PhotoImage(self.rock_icon)
         self.rock_button = Button(self.lower_frame, width=50, height=10, image=self.rock_img, compound='center',
                                   bg=self.WHITE, fg=self.WHITE, font=(self.FONT_NAME, self.FONT_SIZE_SMALL, 'bold'), anchor='center', relief='flat')
-        self.rock_button.grid(row=0, column=0)
-        # Rock Button
-        self.rock_icon = Image.open('image/HandPaper.png')
-        self.rock_icon = self.rock_icon.resize((50, 50), Image.NEAREST)
-        self.rock_img = ImageTk.PhotoImage(self.rock_icon)
-        self.rock_button = Button(self.lower_frame, width=10, height=50, image=self.rock_img, compound='center',
-                                    bg=self.WHITE, fg=self.WHITE, font=(self.FONT_NAME, self.FONT_SIZE_SMALL, 'bold'), anchor='center', relief='flat')
-        self.rock_button.grid(row=0, column=0)
-
-
-
-
-
-
-
-
-
+        self.rock_button.grid(row=15, column=60)
+        #ad
 
     def start(self):
         self.janela.mainloop()
