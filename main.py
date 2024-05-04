@@ -2,9 +2,6 @@ from tkinter import Tk, Frame, Label, Button, NW
 from PIL import Image, ImageTk
 
 class Screen:
-    """
-    A class representing the game screen.
-    """
 
     FONT_NAME = 'Ivy'
     FONT_SIZE_SMALL = 10
@@ -66,9 +63,8 @@ class Screen:
         )
         self.lower_frame.grid(row=1, column=0, sticky=NW)
 
-        # Rock Button
+        self.paper_icon = Image.open('image/HandPaper.png')
         self.rock_icon = Image.open('image/HandRock.png')
-        self.rock_icon = self.rock_icon.resize((50, 50), Image.NEAREST)
         self.rock_img = ImageTk.PhotoImage(self.rock_icon)
         self.rock_button = Button(
             self.lower_frame, width=50, height=10, image=self.rock_img, compound='center',
@@ -77,22 +73,16 @@ class Screen:
         self.rock_button.grid(row=15, column=60)
 
     def start(self):
-        """
-        Start the game screen.
-        """
+      
         self.janela.mainloop()
 
 
 class Game:
-    """
-    A class representing the game.
-    """
+
 
     def __init__(self):
         self.screen = Screen()
 
     def start(self):
-        """
-        Start the game.
-        """
+       
         self.screen.start()
