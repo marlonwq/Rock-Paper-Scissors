@@ -1,0 +1,91 @@
+:root {
+  --bottom: #3b3b3b;
+  --black: #333333;
+  --white: #ffffff;
+  --win: #66bb6a;
+  --lose: #ef5350;
+  --draw: #bdbdbd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bottom);
+  color: var(--white);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.game {
+  width: min(100%, 420px);
+  padding: 24px;
+  text-align: center;
+  background: var(--black);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .4);
+}
+
+h1 { margin: 0 0 16px; font-size: 1.25rem; }
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px 0;
+  margin-bottom: 16px;
+  background: var(--bottom);
+  border-radius: 10px;
+}
+
+.scoreboard div { display: flex; flex-direction: column; min-width: 64px; }
+.scoreboard strong { font-size: 2rem; line-height: 1.1; }
+.label { font-size: .8rem; color: #dddddd; }
+.divider { font-size: 2rem; color: #dddddd; }
+
+.result { min-height: 1.5em; margin: 12px 0 4px; font-weight: 700; font-size: 1.1rem; }
+.choices { min-height: 1.2em; margin: 0 0 16px; color: #dddddd; font-size: .9rem; }
+
+.buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+.buttons button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.buttons button:hover:not(:disabled) { transform: translateY(-2px); }
+.buttons button:disabled { opacity: .5; cursor: not-allowed; }
+.buttons img { width: 72px; height: 72px; }
+
+.controls { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 18px; font-size: .85rem; }
+
+#reset {
+  padding: 6px 14px;
+  border: 1px solid #777777;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--white);
+  font: inherit;
+  cursor: pointer;
+}
+
+.hint { margin: 16px 0 0; color: #aaaaaa; font-size: .75rem; }
+
+@media (max-width: 380px) {
+  .buttons img { width: 56px; height: 56px; }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Rock, Paper, Scissors</h1>
+
+    <section class="scoreboard" aria-label="Score">
+      <div><span class="label">You</span><strong id="user-score">0</strong></div>
+      <span class="divider">:</span>
+      <div><span class="label">PC</span><strong id="pc-score">0</strong></div>
+    </section>
+
+    <p id="result" class="result">Choose your move</p>
+    <p id="choices" class="choices"></p>
+
+    <div class="buttons">
+      <button type="button" data-move="rock"><img src="image/HandRock.png" alt=""><span>Rock</span></button>
+      <button type="button" data-move="paper"><img src="image/HandPaper.png" alt=""><span>Paper</span></button>
+      <button type="button" data-move="scissors"><img src="image/HandScissors.png" alt=""><span>Scissors</span></button>
+    </div>
+
+    <div class="controls">
+      <label><input type="checkbox" id="best-of-three" checked> Best of 3 (first to 2 wins)</label>
+      <button type="button" id="reset">Reset</button>
+    </div>
+
+    <p class="hint">Shortcuts: 1 = rock · 2 = paper · 3 = scissors · R = reset</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
